@@ -32,8 +32,10 @@ library(neuralnet)
 library(quantmod)
 library(lmtest)
 library(forecast)
-data.path = './data/breakfast-at-the-frat/subsets/monthly/complete/'
-m.tr.files = sort(list.files(path =data.path))
+#data.path = './data/breakfast-at-the-frat/subsets/monthly/complete/'
+#m.tr.files = sort(list.files(path =data.path))
+m.tr.files = read.csv(file = './data/targetFilesList1.txt',header = T,stringsAsFactors = F)
+colnames(m.tr.files)<-'file.path'
 target.files.vec = vector(mode = 'character',length = 0)
 target.files.dump1 = './data/targetFilesList1.txt'
 target.files.dump2 = './data/targetFilesList2.txt'
